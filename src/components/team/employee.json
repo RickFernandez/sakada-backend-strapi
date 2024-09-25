@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_employee_employees",
+  "info": {
+    "displayName": "Employee",
+    "icon": "user",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Picture": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Name": {
+      "type": "string",
+      "required": true,
+      "default": "First_Name Last_Name"
+    },
+    "Description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
