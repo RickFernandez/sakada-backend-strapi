@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_page_page_headers",
+  "info": {
+    "displayName": "Header",
+    "icon": "dashboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "BackgroundMedia": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Client": {
+      "type": "string"
+    },
+    "Design_Animation": {
+      "type": "string",
+      "default": "Sakada"
+    }
+  }
+}

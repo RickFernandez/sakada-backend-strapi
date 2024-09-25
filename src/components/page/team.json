@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_team_teams",
+  "info": {
+    "displayName": "Team",
+    "icon": "heart",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Employee": {
+      "type": "component",
+      "repeatable": true,
+      "component": "team.employee"
+    }
+  }
+}

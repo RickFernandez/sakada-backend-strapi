@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_page_feedbacks",
+  "info": {
+    "displayName": "Feedback",
+    "icon": "discuss"
+  },
+  "options": {},
+  "attributes": {
+    "Picture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "Feedback": {
+      "type": "text",
+      "required": true
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Role": {
+      "type": "string",
+      "required": true
+    },
+    "Company": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
