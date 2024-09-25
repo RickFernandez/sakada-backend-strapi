@@ -1,0 +1,112 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "PresentationMedia": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Challenge": {
+      "type": "richtext"
+    },
+    "ChallengeMedias": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Solution": {
+      "type": "text",
+      "default": "description of project solution"
+    },
+    "SolutionMedia": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Testimony": {
+      "displayName": "Feedback",
+      "type": "component",
+      "repeatable": false,
+      "component": "page.feedback"
+    },
+    "TestimonyMedias": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ChallengeSlogan": {
+      "type": "richtext"
+    },
+    "Header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.page-header",
+      "required": true
+    },
+    "SolutionSlogan": {
+      "type": "richtext"
+    },
+    "ProjectName": {
+      "type": "string",
+      "required": true,
+      "default": "ReferenceName"
+    },
+    "ReferenceUrl": {
+      "type": "string",
+      "required": true
+    },
+    "Solution_1": {
+      "type": "richtext"
+    },
+    "Solution_2": {
+      "type": "richtext"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "projects"
+    },
+    "project_filters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project-filter.project-filter",
+      "inversedBy": "projects"
+    }
+  }
+}
