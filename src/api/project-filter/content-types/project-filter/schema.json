@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_filters",
+  "info": {
+    "singularName": "project-filter",
+    "pluralName": "project-filters",
+    "displayName": "Project Filter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project.project",
+      "mappedBy": "project_filters"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "project_filters"
+    }
+  }
+}
