@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "Employee": {
+    "employee": {
       "type": "component",
       "repeatable": true,
       "component": "team.employee"

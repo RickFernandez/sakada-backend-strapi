@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "BackgroundMedia": {
+    "backgroundMedia": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -18,14 +18,14 @@
         "audios"
       ]
     },
-    "Title": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "Client": {
+    "client": {
       "type": "string"
     },
-    "Design_Animation": {
+    "design_animation": {
       "type": "string",
       "default": "Sakada"
     }

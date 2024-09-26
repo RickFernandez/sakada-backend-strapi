@@ -800,7 +800,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     draftAndPublish: false;
   };
   attributes: {
-    Name: Attribute.String & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
     project_filters: Attribute.Relation<
       'api::category.category',
       'manyToMany',
@@ -840,10 +840,10 @@ export interface ApiPagePage extends Schema.CollectionType {
     draftAndPublish: false;
   };
   attributes: {
-    PageHeader: Attribute.Component<'page.page-header'>;
-    TeamBlock: Attribute.Component<'page.team'>;
-    PageName: Attribute.String & Attribute.Required;
-    UrlReference: Attribute.UID;
+    pageHeader: Attribute.Component<'page.page-header'>;
+    teamBlock: Attribute.Component<'page.team'>;
+    pageName: Attribute.String & Attribute.Required;
+    urlReference: Attribute.UID;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
@@ -865,23 +865,21 @@ export interface ApiProjectProject extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    PresentationMedia: Attribute.Media;
-    Challenge: Attribute.RichText;
-    ChallengeMedias: Attribute.Media;
-    Solution: Attribute.Text &
-      Attribute.DefaultTo<'description of project solution'>;
-    SolutionMedia: Attribute.Media;
-    Testimony: Attribute.Component<'page.feedback'>;
-    TestimonyMedias: Attribute.Media;
-    ChallengeSlogan: Attribute.RichText;
-    Header: Attribute.Component<'page.page-header'> & Attribute.Required;
-    SolutionSlogan: Attribute.RichText;
-    ProjectName: Attribute.String &
+    presentationMedia: Attribute.Media;
+    challenge: Attribute.RichText;
+    challengeMedias: Attribute.Media;
+    solutionMedia: Attribute.Media;
+    testimony: Attribute.Component<'page.feedback'>;
+    testimonyMedias: Attribute.Media;
+    challengeSlogan: Attribute.RichText;
+    header: Attribute.Component<'page.page-header'> & Attribute.Required;
+    solutionSlogan: Attribute.RichText;
+    projectName: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'ReferenceName'>;
-    ReferenceUrl: Attribute.String & Attribute.Required;
-    Solution_1: Attribute.RichText;
-    Solution_2: Attribute.RichText;
+    referenceUrl: Attribute.String & Attribute.Required;
+    solution_1: Attribute.RichText;
+    solution_2: Attribute.RichText;
     category: Attribute.Relation<
       'api::project.project',
       'manyToOne',
@@ -922,7 +920,7 @@ export interface ApiProjectFilterProjectFilter extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Name: Attribute.String & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
     projects: Attribute.Relation<
       'api::project-filter.project-filter',
       'manyToMany',

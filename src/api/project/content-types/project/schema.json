@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "PresentationMedia": {
+    "presentationMedia": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -23,10 +23,10 @@
         "audios"
       ]
     },
-    "Challenge": {
+    "challenge": {
       "type": "richtext"
     },
-    "ChallengeMedias": {
+    "challengeMedias": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -37,11 +37,7 @@
         "audios"
       ]
     },
-    "Solution": {
-      "type": "text",
-      "default": "description of project solution"
-    },
-    "SolutionMedia": {
+    "solutionMedia": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -52,13 +48,13 @@
         "audios"
       ]
     },
-    "Testimony": {
+    "testimony": {
       "displayName": "Feedback",
       "type": "component",
       "repeatable": false,
       "component": "page.feedback"
     },
-    "TestimonyMedias": {
+    "testimonyMedias": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -69,31 +65,31 @@
         "audios"
       ]
     },
-    "ChallengeSlogan": {
+    "challengeSlogan": {
       "type": "richtext"
     },
-    "Header": {
+    "header": {
       "type": "component",
       "repeatable": false,
       "component": "page.page-header",
       "required": true
     },
-    "SolutionSlogan": {
+    "solutionSlogan": {
       "type": "richtext"
     },
-    "ProjectName": {
+    "projectName": {
       "type": "string",
       "required": true,
       "default": "ReferenceName"
     },
-    "ReferenceUrl": {
+    "referenceUrl": {
       "type": "string",
       "required": true
     },
-    "Solution_1": {
+    "solution_1": {
       "type": "richtext"
     },
-    "Solution_2": {
+    "solution_2": {
       "type": "richtext"
     },
     "category": {

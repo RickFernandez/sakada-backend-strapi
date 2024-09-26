@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "Picture": {
+    "picture": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -18,12 +18,12 @@
         "audios"
       ]
     },
-    "Name": {
+    "name": {
       "type": "string",
       "required": true,
       "default": "First_Name Last_Name"
     },
-    "Description": {
+    "description": {
       "type": "text",
       "required": true
     }

@@ -12,22 +12,22 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "PageHeader": {
+    "pageHeader": {
       "displayName": "Page Header",
       "type": "component",
       "repeatable": false,
       "component": "page.page-header"
     },
-    "TeamBlock": {
+    "teamBlock": {
       "type": "component",
       "repeatable": false,
       "component": "page.team"
     },
-    "PageName": {
+    "pageName": {
       "type": "string",
       "required": true
     },
-    "UrlReference": {
+    "urlReference": {
       "type": "uid"
     }
   }

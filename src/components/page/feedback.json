@@ -2,34 +2,35 @@
   "collectionName": "components_page_feedbacks",
   "info": {
     "displayName": "Feedback",
-    "icon": "discuss"
+    "icon": "discuss",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Picture": {
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
-    "Feedback": {
+    "feedback": {
       "type": "text",
       "required": true
     },
-    "Name": {
+    "name": {
       "type": "string",
       "required": true
     },
-    "Role": {
+    "role": {
       "type": "string",
       "required": true
     },
-    "Company": {
+    "company": {
       "type": "string",
       "required": true
     }
