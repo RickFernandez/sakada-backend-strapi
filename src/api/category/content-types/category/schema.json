@@ -4,7 +4,7 @@
   "info": {
     "singularName": "category",
     "pluralName": "categories",
-    "displayName": "Category",
+    "displayName": "category",
     "description": ""
   },
   "options": {
@@ -16,11 +16,11 @@
       "type": "string",
       "required": true
     },
-    "project_filters": {
+    "projectFilters": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::project-filter.project-filter",
-      "mappedBy": "categories"
+      "inversedBy": "categories"
     },
     "projects": {
       "type": "relation",

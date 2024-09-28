@@ -793,7 +793,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   info: {
     singularName: 'category';
     pluralName: 'categories';
-    displayName: 'Category';
+    displayName: 'category';
     description: '';
   };
   options: {
@@ -801,7 +801,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    project_filters: Attribute.Relation<
+    projectFilters: Attribute.Relation<
       'api::category.category',
       'manyToMany',
       'api::project-filter.project-filter'
@@ -833,7 +833,7 @@ export interface ApiPagePage extends Schema.CollectionType {
   info: {
     singularName: 'page';
     pluralName: 'pages';
-    displayName: 'Page';
+    displayName: 'page';
     description: '';
   };
   options: {
@@ -858,7 +858,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
   info: {
     singularName: 'project';
     pluralName: 'projects';
-    displayName: 'Project';
+    displayName: 'project';
     description: '';
   };
   options: {
@@ -961,7 +961,7 @@ export interface ApiTeamTeam extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    Employee: Attribute.Component<'team.employee', true>;
+    employees: Attribute.DynamicZone<['team.employee']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

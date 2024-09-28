@@ -12,11 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Employee": {
-      "displayName": "Employee",
-      "type": "component",
-      "repeatable": true,
-      "component": "team.employee"
+    "employees": {
+      "type": "dynamiczone",
+      "components": [
+        "team.employee"
+      ]
     }
   }
 }
