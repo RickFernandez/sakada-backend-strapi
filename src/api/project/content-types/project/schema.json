@@ -103,6 +103,12 @@
       "relation": "manyToMany",
       "target": "api::project-filter.project-filter",
       "inversedBy": "projects"
+    },
+    "pages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::page.page",
+      "mappedBy": "projects"
     }
   }
 }
