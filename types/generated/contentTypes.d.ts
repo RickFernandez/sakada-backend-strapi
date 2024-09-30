@@ -811,6 +811,11 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'oneToMany',
       'api::project.project'
     >;
+    page: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'api::page.page'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -844,6 +849,16 @@ export interface ApiPagePage extends Schema.CollectionType {
     teamBlock: Attribute.Component<'page.team'>;
     pageName: Attribute.String & Attribute.Required;
     urlReference: Attribute.UID;
+    projects: Attribute.Relation<
+      'api::page.page',
+      'manyToMany',
+      'api::project.project'
+    >;
+    category: Attribute.Relation<
+      'api::page.page',
+      'oneToOne',
+      'api::category.category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
@@ -889,6 +904,11 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'api::project.project',
       'manyToMany',
       'api::project-filter.project-filter'
+    >;
+    pages: Attribute.Relation<
+      'api::project.project',
+      'manyToMany',
+      'api::page.page'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
