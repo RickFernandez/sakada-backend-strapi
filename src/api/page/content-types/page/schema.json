@@ -41,6 +41,12 @@
       "relation": "oneToOne",
       "target": "api::category.category",
       "inversedBy": "page"
+    },
+    "project_filters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project-filter.project-filter",
+      "inversedBy": "pages"
     }
   }
 }

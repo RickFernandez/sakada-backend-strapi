@@ -27,6 +27,12 @@
       "relation": "manyToMany",
       "target": "api::category.category",
       "mappedBy": "projectFilters"
+    },
+    "pages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::page.page",
+      "mappedBy": "project_filters"
     }
   }
 }
