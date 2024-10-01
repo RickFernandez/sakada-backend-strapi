@@ -859,6 +859,11 @@ export interface ApiPagePage extends Schema.CollectionType {
       'oneToOne',
       'api::category.category'
     >;
+    project_filters: Attribute.Relation<
+      'api::page.page',
+      'manyToMany',
+      'api::project-filter.project-filter'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
@@ -910,6 +915,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'manyToMany',
       'api::page.page'
     >;
+    wallpaperMedia: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -950,6 +956,11 @@ export interface ApiProjectFilterProjectFilter extends Schema.CollectionType {
       'api::project-filter.project-filter',
       'manyToMany',
       'api::category.category'
+    >;
+    pages: Attribute.Relation<
+      'api::project-filter.project-filter',
+      'manyToMany',
+      'api::page.page'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
