@@ -109,6 +109,16 @@
       "relation": "manyToMany",
       "target": "api::page.page",
       "mappedBy": "projects"
+    },
+    "wallpaperMedia": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
