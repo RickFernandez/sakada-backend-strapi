@@ -28,6 +28,9 @@
     "design_animation": {
       "type": "string",
       "default": "Sakada"
+    },
+    "titleColorCode": {
+      "type": "string"
     }
   }
 }
