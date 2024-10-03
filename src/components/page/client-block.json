@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_page_client_blocks",
+  "info": {
+    "displayName": "clientBlock"
+  },
+  "options": {},
+  "attributes": {
+    "client": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.client"
+    }
+  }
+}
