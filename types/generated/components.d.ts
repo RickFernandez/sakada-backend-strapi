@@ -1,5 +1,28 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface PageClientBlock extends Schema.Component {
+  collectionName: 'components_page_client_blocks';
+  info: {
+    displayName: 'clientBlock';
+  };
+  attributes: {
+    client: Attribute.Component<'page.client', true>;
+  };
+}
+
+export interface PageClient extends Schema.Component {
+  collectionName: 'components_page_clients';
+  info: {
+    displayName: 'client';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    logo: Attribute.Media & Attribute.Required;
+  };
+}
+
 export interface PageFeedback extends Schema.Component {
   collectionName: 'components_page_feedbacks';
   info: {
@@ -28,6 +51,7 @@ export interface PagePageHeader extends Schema.Component {
     title: Attribute.String & Attribute.Required;
     client: Attribute.String;
     design_animation: Attribute.String & Attribute.DefaultTo<'Sakada'>;
+    titleColorCode: Attribute.String;
   };
 }
 
@@ -62,6 +86,8 @@ export interface TeamEmployee extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'page.client-block': PageClientBlock;
+      'page.client': PageClient;
       'page.feedback': PageFeedback;
       'page.page-header': PagePageHeader;
       'page.team': PageTeam;

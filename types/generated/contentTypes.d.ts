@@ -833,6 +833,37 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiClientClient extends Schema.SingleType {
+  collectionName: 'clients';
+  info: {
+    singularName: 'client';
+    pluralName: 'clients';
+    displayName: 'clients';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    client: Attribute.Component<'page.client', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::client.client',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::client.client',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Schema.CollectionType {
   collectionName: 'pages';
   info: {
@@ -846,7 +877,7 @@ export interface ApiPagePage extends Schema.CollectionType {
   };
   attributes: {
     pageHeader: Attribute.Component<'page.page-header'>;
-    teamBlock: Attribute.Component<'page.team'>;
+    team: Attribute.Component<'page.team'>;
     pageName: Attribute.String & Attribute.Required;
     urlReference: Attribute.UID;
     projects: Attribute.Relation<
@@ -864,6 +895,7 @@ export interface ApiPagePage extends Schema.CollectionType {
       'manyToMany',
       'api::project-filter.project-filter'
     >;
+    clients: Attribute.Component<'page.client-block'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
@@ -891,9 +923,9 @@ export interface ApiProjectProject extends Schema.CollectionType {
     solutionMedia: Attribute.Media;
     testimony: Attribute.Component<'page.feedback'>;
     testimonyMedias: Attribute.Media;
-    challengeSlogan: Attribute.RichText;
+    challengeSlogan_1: Attribute.RichText;
     header: Attribute.Component<'page.page-header'> & Attribute.Required;
-    solutionSlogan: Attribute.RichText;
+    challengeSlogan_2: Attribute.RichText;
     projectName: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'ReferenceName'>;
@@ -916,6 +948,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'api::page.page'
     >;
     wallpaperMedia: Attribute.Media;
+    backgroundColorCode: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1022,6 +1055,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::category.category': ApiCategoryCategory;
+      'api::client.client': ApiClientClient;
       'api::page.page': ApiPagePage;
       'api::project.project': ApiProjectProject;
       'api::project-filter.project-filter': ApiProjectFilterProjectFilter;
