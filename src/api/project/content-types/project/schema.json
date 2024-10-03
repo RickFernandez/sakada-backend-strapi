@@ -65,7 +65,7 @@
         "audios"
       ]
     },
-    "challengeSlogan": {
+    "challengeSlogan_1": {
       "type": "richtext"
     },
     "header": {
@@ -74,7 +74,7 @@
       "component": "page.page-header",
       "required": true
     },
-    "solutionSlogan": {
+    "challengeSlogan_2": {
       "type": "richtext"
     },
     "projectName": {
@@ -111,14 +111,18 @@
       "mappedBy": "projects"
     },
     "wallpaperMedia": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "backgroundColorCode": {
+      "type": "string"
     }
   }
 }
