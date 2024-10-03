@@ -18,7 +18,7 @@
       "repeatable": false,
       "component": "page.page-header"
     },
-    "teamBlock": {
+    "team": {
       "type": "component",
       "repeatable": false,
       "component": "page.team"
@@ -47,6 +47,12 @@
       "relation": "manyToMany",
       "target": "api::project-filter.project-filter",
       "inversedBy": "pages"
+    },
+    "clients": {
+      "displayName": "clientBlock",
+      "type": "component",
+      "repeatable": false,
+      "component": "page.client-block"
     }
   }
 }
