@@ -55,6 +55,19 @@ export interface PagePageHeader extends Schema.Component {
   };
 }
 
+export interface PageSimpleContent extends Schema.Component {
+  collectionName: 'components_page_simple_contents';
+  info: {
+    displayName: 'simple content';
+    icon: 'file';
+  };
+  attributes: {
+    image: Attribute.Media;
+    title: Attribute.String;
+    description: Attribute.RichText;
+  };
+}
+
 export interface PageTeam extends Schema.Component {
   collectionName: 'components_team_teams';
   info: {
@@ -64,6 +77,18 @@ export interface PageTeam extends Schema.Component {
   };
   attributes: {
     employee: Attribute.Component<'team.employee', true>;
+  };
+}
+
+export interface PageTopics extends Schema.Component {
+  collectionName: 'components_page_topics';
+  info: {
+    displayName: 'topics';
+    icon: 'bulletList';
+  };
+  attributes: {
+    title: Attribute.String;
+    simple_content: Attribute.Component<'page.simple-content', true>;
   };
 }
 
@@ -90,7 +115,9 @@ declare module '@strapi/types' {
       'page.client': PageClient;
       'page.feedback': PageFeedback;
       'page.page-header': PagePageHeader;
+      'page.simple-content': PageSimpleContent;
       'page.team': PageTeam;
+      'page.topics': PageTopics;
       'team.employee': TeamEmployee;
     }
   }

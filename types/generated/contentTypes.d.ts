@@ -896,6 +896,8 @@ export interface ApiPagePage extends Schema.CollectionType {
       'api::project-filter.project-filter'
     >;
     clients: Attribute.Component<'page.client-block'>;
+    topic: Attribute.Component<'page.topics', true>;
+    simple_contents: Attribute.Component<'page.simple-content', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
