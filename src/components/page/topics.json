@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_page_topics",
+  "info": {
+    "displayName": "topics",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "simple_content": {
+      "displayName": "simple content",
+      "type": "component",
+      "repeatable": true,
+      "component": "page.simple-content"
+    }
+  }
+}
