@@ -53,6 +53,17 @@
       "type": "component",
       "repeatable": false,
       "component": "page.client-block"
+    },
+    "topic": {
+      "displayName": "topics",
+      "type": "component",
+      "repeatable": true,
+      "component": "page.topics"
+    },
+    "simple_contents": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.simple-content"
     }
   }
 }
