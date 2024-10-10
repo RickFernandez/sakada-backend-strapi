@@ -985,29 +985,6 @@ export interface ApiProjectFilterProjectFilter extends Schema.CollectionType {
   };
 }
 
-export interface ApiTeamTeam extends Schema.SingleType {
-  collectionName: 'teams';
-  info: {
-    singularName: 'team';
-    pluralName: 'teams';
-    displayName: 'Team';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    employees: Attribute.DynamicZone<['team.employee']>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::team.team', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::team.team', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1031,7 +1008,6 @@ declare module '@strapi/types' {
       'api::page.page': ApiPagePage;
       'api::project.project': ApiProjectProject;
       'api::project-filter.project-filter': ApiProjectFilterProjectFilter;
-      'api::team.team': ApiTeamTeam;
     }
   }
 }
