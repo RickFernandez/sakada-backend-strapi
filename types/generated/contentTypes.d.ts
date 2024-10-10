@@ -788,51 +788,6 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiCategoryCategory extends Schema.CollectionType {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'category';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required;
-    projectFilters: Attribute.Relation<
-      'api::category.category',
-      'manyToMany',
-      'api::project-filter.project-filter'
-    >;
-    projects: Attribute.Relation<
-      'api::category.category',
-      'oneToMany',
-      'api::project.project'
-    >;
-    page: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'api::page.page'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiClientClient extends Schema.SingleType {
   collectionName: 'clients';
   info: {
@@ -864,6 +819,36 @@ export interface ApiClientClient extends Schema.SingleType {
   };
 }
 
+export interface ApiNavigationNavigation extends Schema.SingleType {
+  collectionName: 'navigations';
+  info: {
+    singularName: 'navigation';
+    pluralName: 'navigations';
+    displayName: 'navigation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    navigation_item: Attribute.Component<'navigation.navigation-items', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::navigation.navigation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::navigation.navigation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Schema.CollectionType {
   collectionName: 'pages';
   info: {
@@ -884,11 +869,6 @@ export interface ApiPagePage extends Schema.CollectionType {
       'api::page.page',
       'manyToMany',
       'api::project.project'
-    >;
-    category: Attribute.Relation<
-      'api::page.page',
-      'oneToOne',
-      'api::category.category'
     >;
     project_filters: Attribute.Relation<
       'api::page.page',
@@ -934,11 +914,6 @@ export interface ApiProjectProject extends Schema.CollectionType {
     referenceUrl: Attribute.String & Attribute.Required;
     solution_1: Attribute.RichText;
     solution_2: Attribute.RichText;
-    category: Attribute.Relation<
-      'api::project.project',
-      'manyToOne',
-      'api::category.category'
-    >;
     project_filters: Attribute.Relation<
       'api::project.project',
       'manyToMany',
@@ -986,11 +961,6 @@ export interface ApiProjectFilterProjectFilter extends Schema.CollectionType {
       'api::project-filter.project-filter',
       'manyToMany',
       'api::project.project'
-    >;
-    categories: Attribute.Relation<
-      'api::project-filter.project-filter',
-      'manyToMany',
-      'api::category.category'
     >;
     pages: Attribute.Relation<
       'api::project-filter.project-filter',
@@ -1056,8 +1026,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::category.category': ApiCategoryCategory;
       'api::client.client': ApiClientClient;
+      'api::navigation.navigation': ApiNavigationNavigation;
       'api::page.page': ApiPagePage;
       'api::project.project': ApiProjectProject;
       'api::project-filter.project-filter': ApiProjectFilterProjectFilter;

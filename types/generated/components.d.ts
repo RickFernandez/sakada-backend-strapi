@@ -1,5 +1,19 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface NavigationNavigationItems extends Schema.Component {
+  collectionName: 'components_navigation_navigation_items';
+  info: {
+    displayName: 'navigation-item';
+    icon: 'paperPlane';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    referenceUrlPage: Attribute.String;
+    description: Attribute.String;
+  };
+}
+
 export interface PageClientBlock extends Schema.Component {
   collectionName: 'components_page_client_blocks';
   info: {
@@ -111,6 +125,7 @@ export interface TeamEmployee extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'navigation.navigation-items': NavigationNavigationItems;
       'page.client-block': PageClientBlock;
       'page.client': PageClient;
       'page.feedback': PageFeedback;
