@@ -92,12 +92,6 @@
     "solution_2": {
       "type": "richtext"
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "projects"
-    },
     "project_filters": {
       "type": "relation",
       "relation": "manyToMany",

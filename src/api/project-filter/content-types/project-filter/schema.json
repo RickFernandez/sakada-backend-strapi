@@ -22,12 +22,6 @@
       "target": "api::project.project",
       "mappedBy": "project_filters"
     },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::category.category",
-      "mappedBy": "projectFilters"
-    },
     "pages": {
       "type": "relation",
       "relation": "manyToMany",
